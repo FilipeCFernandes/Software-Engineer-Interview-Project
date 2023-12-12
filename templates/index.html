@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <center>
+   <h1>Software Engineer Interview Project</h1> 
+   <br/><br/>
+   <form action="" method=POST>
+       {% csrf_token %}
+
+       {{ form.as_p }}
+
+       <input type="submit" value="Submit" class="btn btn-secondary">
+   </form>
+   <strong>List     </strong>
+   <h1></h1>
+   {% if response %}
+   {%for i in response%}
+   <h2>{{i.name}}</h2>
+   <p> {{i.html_url}} - {{i.language}} -  {{i.description}} </p>
+   {% endfor %}
+   {% endif %}
+   </center>
+</body>
+</html>
